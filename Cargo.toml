@@ -1,0 +1,7 @@
+[package]
+name = "kunit"
+version = "0.1.0"
+authors = ["kula"]
+
+[dependencies]
+nix = "0.11.0"
