@@ -7,9 +7,9 @@ use clap::{Arg, App, SubCommand};
 
 
 
-fn kernel() -> Result<String, io::Error> {
+fn kunit() -> Result<String, io::Error> {
     let matches = App::new("kunit")
-        .version("1.0")
+        .version("0.1")
         .about("kunit container")
         .author("kula")
         .subcommand(
@@ -28,9 +28,11 @@ fn kernel() -> Result<String, io::Error> {
     Ok(s)
 }
 
+fn run_kunit() -> Result<Pid>
+
 
 fn main() {
-    kernel();
+    kunit();
     println!("kunit start");
 }
 
