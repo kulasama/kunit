@@ -79,11 +79,6 @@ pub struct Process {
 }
 
 
-
-
-
-
-}
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Spec{
     pub Version:String,
