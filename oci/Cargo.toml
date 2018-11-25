@@ -1,5 +1,5 @@
 [package]
-name = "runtime-spec"
+name = "oci"
 version = "0.1.0"
 authors = ["kula <115645232@qq.com>"]
 
