@@ -24,11 +24,10 @@ fn kunit() -> Result<String, io::Error> {
         _ => println!("command not recognized"),
     }
 
-    let mut s = String::new();
+    let s = String::new();
     Ok(s)
 }
 
-fn run_kunit() -> Result<Pid>
 
 
 fn main() {
