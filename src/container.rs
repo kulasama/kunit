@@ -1,7 +1,9 @@
 use oci::config::Spec;
 use std::fs::File;
 use std::net::TcpStream;
-type enum CtAct{
+use time::Tm;
+
+pub enum CtAct{
     CT_ACT_CREATE,
     CT_ACT_RUN,
     CT_ACT_RESTORE,
@@ -47,6 +49,27 @@ pub struct CriuOpts{
     pub StatusFd:String,
 }
 
+pub enum Status{
+    Created,
+    Running,
+    Pausing,
+    Paused,
+    Stopped,
+}
+
+pub struct State{
+    pub ID:String,
+    pub InitProcessPid:i32,
+    pub InitProcessStartTime:u64,
+    pub Crated:Tm,
+    pub config:
+
+}
+pub trait Container{
+    fn ID() -> String;
+    fn Status() -> Status;
+
+}
 pub struct Runner{
     pub init:bool,
     pub enableSubreaper:bool,
