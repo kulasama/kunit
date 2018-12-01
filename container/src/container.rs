@@ -13,7 +13,7 @@ pub enum CtAct{
 }
 
 pub struct notifySocket{
-    pub socket:TcpStream;
+    pub socket:TcpStream,
     pub host:String,
     pub soktetPath:String,
 }
@@ -46,7 +46,7 @@ pub struct CriuOpts{
     pub PreDump:bool,
     pub PageServer:CriuPageServerInfo,
     pub VethPairs:Vec<VethPairName>,
-    pub ManageCgroupsNode:cgNode,
+    pub ManageCgroupsMode:cgMode,
     pub AutoDedup:bool,
     pub LazyPages:bool,
     pub StatusFd:String,
@@ -75,9 +75,11 @@ pub struct State{
 pub trait Container{
     fn ID() -> String;
     fn Status() -> Status;
-
+    fn OCIState() -> oci::state::State;
+    fn Config() -> oci::config::Config;
 }
-pub struct Runner{
+
+pub struct Runner<T:Container>{
     pub init:bool,
     pub enableSubreaper:bool,
     pub shouldDestory:bool,
@@ -86,7 +88,7 @@ pub struct Runner{
     pub preserveFDs:i64,
     pub pidFile:String,
     pub consoleSocket:String,
-    pub container:Container,
+    pub container:T,
     pub action:CtAct,
     pub notifySocket:notifySocket,
     pub criuOpts:CriuOpts,

@@ -1,0 +1,8 @@
+[package]
+name = "container"
+version = "0.1.0"
+authors = ["kula <115645232@qq.com>"]
+
+[dependencies]
+oci={path='../oci'}
+time = "0.1"
