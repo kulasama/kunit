@@ -73,7 +73,7 @@ pub struct Device{
     pub Allow:bool,
 }
 
-type NamespaceType=String;
+pub type NamespaceType=String;
 
 pub struct Namespace{
     pub Type:NamespaceType,

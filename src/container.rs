@@ -1,6 +1,9 @@
 use oci::config::Spec;
+use oci::config::Config;
+use oci::config::NamespaceType;
 use std::fs::File;
 use std::net::TcpStream;
+use std::collections::HashMap;
 use time::Tm;
 
 pub enum CtAct{
@@ -62,8 +65,12 @@ pub struct State{
     pub InitProcessPid:i32,
     pub InitProcessStartTime:u64,
     pub Crated:Tm,
-    pub config:
-
+    pub config:Config,
+    pub Rootless:bool,
+    pub CgroupPaths:HashMap<String,String>,
+    pub NamespacePaths:HashMap<NamespaceType,String>,
+    pub ExternalDescriptors:Vec<String>,
+    pub IntelRdtPath:String,
 }
 pub trait Container{
     fn ID() -> String;
