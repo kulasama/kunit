@@ -1,6 +1,6 @@
 use oci::config::Spec;
-use oci::config::Config;
-use oci::config::NamespaceType;
+use config::NamespaceType;
+use config::Config;
 use std::fs::File;
 use std::net::TcpStream;
 use std::collections::HashMap;
@@ -76,8 +76,10 @@ pub trait Container{
     fn ID() -> String;
     fn Status() -> Status;
     fn OCIState() -> oci::state::State;
-    fn Config() -> oci::config::Config;
+    fn Config() -> Config;
 }
+
+
 
 pub struct Runner<T:Container>{
     pub init:bool,
