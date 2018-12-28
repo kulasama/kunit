@@ -90,7 +90,7 @@ pub struct ThrottleDevice{
 pub enum FreezerState{
     Undefined,
     Frozen,
-    Thawed
+    Thawedin
 }
 
 pub struct HugepageLimit{

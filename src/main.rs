@@ -8,7 +8,7 @@ extern crate time;
 
 
 
-
+const CONFIG: &'static str="config.json";
 
 fn kunit() -> Result<String, io::Error> {
     let matches = App::new("kunit")
