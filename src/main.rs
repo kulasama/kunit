@@ -5,12 +5,17 @@ use clap::{Arg, App, SubCommand};
 
 extern crate oci;
 extern crate time;
+extern crate file;
+
+mod utils;
 
 
 
-const CONFIG: &'static str="config.json";
+
+
 
 fn kunit() -> Result<String, io::Error> {
+    utils::load_spec();
     let matches = App::new("kunit")
         .version("0.1")
         .about("kunit container")

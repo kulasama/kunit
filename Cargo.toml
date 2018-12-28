@@ -7,4 +7,5 @@ authors = ["kula"]
 nix = "0.11.0"
 clap = "2.31.2"
 time = "0.1"
+file = "1.1.2"
 oci={path='oci'}
